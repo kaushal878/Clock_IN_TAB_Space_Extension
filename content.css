@@ -1,0 +1,155 @@
+/* Floating Clock Overlay Styles */
+.floating-clock-overlay {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 2147483647 !important;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+  background: rgba(15, 23, 42, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  padding: 12px 20px !important;
+  color: #ffffff !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  cursor: move !important;
+  user-select: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  animation: fadeIn 0.5s ease-out !important;
+  min-width: 120px !important;
+  text-align: center !important;
+}
+
+.floating-clock-overlay:hover {
+  background: rgba(15, 23, 42, 0.95) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+}
+
+.floating-clock-overlay.dragging {
+  cursor: grabbing !important;
+  transform: scale(1.05) !important;
+  opacity: 0.9 !important;
+}
+
+.floating-clock-overlay.hidden {
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  pointer-events: none !important;
+}
+
+.floating-clock-overlay.focus-mode {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border: 2px solid rgba(59, 130, 246, 0.5) !important;
+  box-shadow: 
+    0 0 30px rgba(59, 130, 246, 0.3),
+    0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+.floating-clock-overlay.lock-screen {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95)) !important;
+  border: 2px solid rgba(168, 85, 247, 0.3) !important;
+  box-shadow: 
+    0 0 40px rgba(168, 85, 247, 0.2),
+    0 16px 64px rgba(0, 0, 0, 0.6) !important;
+  font-size: 24px !important;
+  padding: 20px 30px !important;
+}
+
+.floating-clock-overlay .time-display {
+  display: block !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.floating-clock-overlay .date-display {
+  display: block !important;
+  font-size: 11px !important;
+  opacity: 0.8 !important;
+  margin-top: 4px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.3px !important;
+}
+
+.focus-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  z-index: 2147483646 !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transition: opacity 0.5s ease-out !important;
+}
+
+.focus-overlay.active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.lock-screen-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(15, 23, 42, 0.95)) !important;
+  z-index: 2147483646 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.5s ease-out !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.lock-screen-overlay.active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.floating-clock-overlay.pulse {
+  animation: pulse 2s ease-in-out infinite !important;
+}
+
+/* Hide in fullscreen video */
+:fullscreen .floating-clock-overlay,
+:-webkit-full-screen .floating-clock-overlay,
+:-moz-full-screen .floating-clock-overlay,
+:-ms-fullscreen .floating-clock-overlay {
+  display: none !important;
+}
