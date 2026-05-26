@@ -142,6 +142,14 @@ This project is open source. Feel free to modify and distribute according to you
 
 For issues and feature requests, please check the troubleshooting section or create an issue in the project repository.
 
+## Output Display
+<img width="480" height="875" alt="image" src="https://github.com/user-attachments/assets/226c7a04-245b-4fdd-a776-7422d2a1ab6e" />
+
+   THIS DISPLAY WHEN OPEN EXTENSION 
+
+<img width="229" height="140" alt="image" src="https://github.com/user-attachments/assets/1c7e6d22-bf34-48c7-9e59-ee6f4ccb27a9" />
+      THID DISPLAY ON BROWSER RIGHTSIDE SCREEN 
+   
 ---
 
 **Version**: 1.0.0  
